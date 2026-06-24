@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++: Build Debug",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++20",
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-Wshadow",
+                // "-Wconversion",
+                "-Wfloat-equal",
+                // "-fsanitize=address,undefined",
+                "-D_GLIBCXX_DEBUG",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "C++: Build Release",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++20",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "-Wshadow",
+                // "-Wconversion",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "C++: Clean",
+            "type": "shell",
+            "command": "fd -e dSYM --type directory -x rm -rf && fd --type executable -x rm",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "none",
+            "problemMatcher": []
+        }
+    ]
+}
