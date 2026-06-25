@@ -23,6 +23,9 @@
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                "focus": true
+            },
             "problemMatcher": "$gcc"
         },
         {
@@ -41,6 +44,9 @@
                 "${file}"
             ],
             "group": "build",
+            "presentation": {
+                "focus": true
+            },
             "problemMatcher": "$gcc"
         },
         {
@@ -51,6 +57,9 @@
                 "cwd": "${workspaceFolder}"
             },
             "group": "none",
+            "presentation": {
+                "focus": true
+            },
             "problemMatcher": []
         }
     ]
